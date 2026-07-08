@@ -3,9 +3,9 @@ using UnityEngine;
 public class Player1 : MonoBehaviour
 {
     [Header("Movimento para Frente (Eixo X)")]
-    public float aceleracao = 10f;       // Taxa de acelera��o
+    public float aceleracao = 10f;       // Taxa de aceleracao
     public float velocidadeMaxima = 15f; // Velocidade limite para a frente
-    public float forcaFreio = 5f;        // Taxa de desacelera��o ao soltar o D
+    public float forcaFreio = 5f;        // Taxa de desaceleracao ao soltar o D
 
     [Header("Movimento Vertical (Eixo Y)")]
     public float velocidadeVertical = 8f; // Velocidade para subir e descer
@@ -20,7 +20,7 @@ public class Player1 : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 1. L�GICA DE IR PARA A FRENTE (TECLA D)
+        // 1. LOGICA DE IR PARA A FRENTE (TECLA D)
         if (Input.GetKey(KeyCode.D))
         {
             // Acelera gradualmente enquanto segura o D
@@ -40,12 +40,21 @@ public class Player1 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. L�GICA DE SUBIR E DESCER (SETAS OU W/S)
-        float inputVertical = Input.GetAxisRaw("Vertical");
+        // 2. LOGICA DE SUBIR E DESCER (SETAS OU W/S)
+        float inputVertical = 0f;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            inputVertical = 1f; // Sobe
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            inputVertical = -1f; // Desce
+        }
+
         float velocidadeAtualY = inputVertical * velocidadeVertical;
 
-
-        // 3. APLICA��O DO MOVIMENTO NO RIGIDBODY2D
+        // 3. APLICACAO DO MOVIMENTO NO RIGIDBODY2D
         // O carro vai para a frente (X) e se move para cima/baixo (Y) ao mesmo tempo
         rb.linearVelocity = new Vector2(velocidadeAtualX, velocidadeAtualY);
     }
