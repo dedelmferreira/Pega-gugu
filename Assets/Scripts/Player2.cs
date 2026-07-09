@@ -1,9 +1,6 @@
-using System.Runtime.CompilerServices;
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
     [Header("Movimento para Frente (Eixo X)")]
     public float aceleracao = 10f;       // Taxa de aceleracao
@@ -13,7 +10,7 @@ public class Player1 : MonoBehaviour
     [Header("Movimento Vertical (Eixo Y)")]
     public float velocidadeVertical = 8f; // Velocidade para subir e descer
 
-    public GameObject player2; // Referência ao Player2
+    public GameObject player1; // Referência ao Player1
 
     private Rigidbody2D rb;
     private float velocidadeAtualX = 0f;
@@ -25,15 +22,15 @@ public class Player1 : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (TECLA D)
-        if (Input.GetKey(KeyCode.D))
+        // 1. LOGICA DE IR PARA A FRENTE (SETA PARA DIREITA)
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            // Acelera gradualmente enquanto segura o D
+            // Acelera gradualmente enquanto segura a seta para direita 
             velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
         }
         else
         {
-            // Desacelera suavemente quando solta o D
+            // Desacelera suavemente quando solta a seta para direita
             if (velocidadeAtualX > 0)
             {
                 velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
@@ -45,14 +42,14 @@ public class Player1 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (W/S)
+        // 2. LOGICA DE SUBIR E DESCER (SETAS)
         float inputVertical = 0f;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             inputVertical = 1f; // Sobe
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             inputVertical = -1f; // Desce
         }
@@ -64,18 +61,12 @@ public class Player1 : MonoBehaviour
         rb.linearVelocity = new Vector2(velocidadeAtualX, velocidadeAtualY);
     }
 
-        //Destruindo ao colidir com o Player2
+    //Destruindo ao colidir com o Player2
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Player1"))
         {
-            Destroy(gameObject); // Destrói o Player1
-            ChangeScene("GameOver"); // Chama a função para mudar de cena)
+            Destroy(gameObject); // Destrói o Player2
         }
-    }
-
-    public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }
