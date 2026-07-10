@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player2 : MonoBehaviour
 {
@@ -18,19 +20,21 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Impede a rotação do Rigidbody2D
     }
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (SETA PARA DIREITA)
-        if (Input.GetKey(KeyCode.RightArrow))
+        // 1. LOGICA DE IR PARA A FRENTE (D)
+        if (Input.GetKey(KeyCode.D))
         {
-            // Acelera gradualmente enquanto segura a seta para direita 
+            // Acelera gradualmente enquanto segura o D
             velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
         }
         else
         {
-            // Desacelera suavemente quando solta a seta para direita
+            // Desacelera suavemente quando solta o D
             if (velocidadeAtualX > 0)
             {
                 velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
@@ -42,14 +46,14 @@ public class Player2 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (SETAS)
+        // 2. LOGICA DE SUBIR E DESCER (W/S)
         float inputVertical = 0f;
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             inputVertical = 1f; // Sobe
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S))
         {
             inputVertical = -1f; // Desce
         }
@@ -68,5 +72,18 @@ public class Player2 : MonoBehaviour
         {
             Destroy(gameObject); // Destrói o Player2
         }
+        if (collision.gameObject.CompareTag("Lixo"))
+        {
+            velocidadeAtualX = 0f; // Reduz a velocidade para 0
+        }
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            ChangeScene("Win"); // Chama a função para mudar de cena)
+        }
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

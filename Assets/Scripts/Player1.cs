@@ -21,19 +21,21 @@ public class Player1 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Impede a rotação do Rigidbody2D
     }
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (TECLA D)
-        if (Input.GetKey(KeyCode.D))
+        // 1. LOGICA DE IR PARA A FRENTE (SETA DIREITA)
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            // Acelera gradualmente enquanto segura o D
+            // Acelera gradualmente enquanto segura a seta para direita 
             velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
         }
         else
         {
-            // Desacelera suavemente quando solta o D
+            // Desacelera suavemente quando solta a seta para direita   
             if (velocidadeAtualX > 0)
             {
                 velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
@@ -45,14 +47,14 @@ public class Player1 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (W/S)
+        // 2. LOGICA DE SUBIR E DESCER (SETA PRA CIMA E BAIXO)
         float inputVertical = 0f;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             inputVertical = 1f; // Sobe
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             inputVertical = -1f; // Desce
         }
@@ -71,6 +73,14 @@ public class Player1 : MonoBehaviour
         {
             Destroy(gameObject); // Destrói o Player1
             ChangeScene("GameOver"); // Chama a função para mudar de cena)
+        }
+        if (collision.gameObject.CompareTag("Lixo"))
+        {
+            velocidadeAtualX = 0f; // Reduz a velocidade para 0
+        }
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            ChangeScene("Win"); // Chama a função para mudar de cena)
         }
     }
 
