@@ -42,7 +42,7 @@ public class Player2 : MonoBehaviour
             }
         }
 
-        // Limita a velocidade m�xima no eixo X
+        // Limita a velocidade maxima no eixo X
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
