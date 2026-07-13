@@ -21,38 +21,27 @@ public class Player1 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Impede a rotação do Rigidbody2D
     }
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (TECLA D)
-        if (Input.GetKey(KeyCode.D))
-        {
-            // Acelera gradualmente enquanto segura o D
-            velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
-        }
-        else
-        {
-            // Desacelera suavemente quando solta o D
-            if (velocidadeAtualX > 0)
-            {
-                velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
-                if (velocidadeAtualX < 0) velocidadeAtualX = 0;
-            }
-        }
+        // Acelera gradualmente
+        velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
 
-        // Limita a velocidade m�xima no eixo X
+        // Limita a velocidade maxima no eixo X
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (W/S)
+        // 2. LOGICA DE SUBIR E DESCER (SETA PRA CIMA E BAIXO)
         float inputVertical = 0f;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             inputVertical = 1f; // Sobe
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             inputVertical = -1f; // Desce
         }
@@ -71,6 +60,14 @@ public class Player1 : MonoBehaviour
         {
             Destroy(gameObject); // Destrói o Player1
             ChangeScene("GameOver"); // Chama a função para mudar de cena)
+        }
+        if (collision.gameObject.CompareTag("Lixo"))
+        {
+            velocidadeAtualX = 0f; // Reduz a velocidade para 0
+        }
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            ChangeScene("Win"); // Chama a função para mudar de cena)
         }
     }
 
