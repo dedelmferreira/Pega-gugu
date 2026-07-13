@@ -27,23 +27,10 @@ public class Player1 : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (SETA DIREITA)
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            // Acelera gradualmente enquanto segura a seta para direita 
-            velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
-        }
-        else
-        {
-            // Desacelera suavemente quando solta a seta para direita   
-            if (velocidadeAtualX > 0)
-            {
-                velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
-                if (velocidadeAtualX < 0) velocidadeAtualX = 0;
-            }
-        }
+        // Acelera gradualmente
+        velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
 
-        // Limita a velocidade m�xima no eixo X
+        // Limita a velocidade maxima no eixo X
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 

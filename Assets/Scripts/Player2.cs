@@ -26,21 +26,8 @@ public class Player2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 1. LOGICA DE IR PARA A FRENTE (D)
-        if (Input.GetKey(KeyCode.D))
-        {
-            // Acelera gradualmente enquanto segura o D
-            velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
-        }
-        else
-        {
-            // Desacelera suavemente quando solta o D
-            if (velocidadeAtualX > 0)
-            {
-                velocidadeAtualX -= forcaFreio * Time.fixedDeltaTime;
-                if (velocidadeAtualX < 0) velocidadeAtualX = 0;
-            }
-        }
+         // Acelera gradualmente
+        velocidadeAtualX += aceleracao * Time.fixedDeltaTime;
 
         // Limita a velocidade maxima no eixo X
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
