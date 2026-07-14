@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b19e0dfa58ebaf245b5350928f529227
+guid: bf909cca6afe68841bb49ec53b46c356
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3828746426031234298
-    second: Botao_0
+      213: 6040314079608331539
+    second: Teste numero 23453421_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Botao_0
+      name: Teste numero 23453421_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 12
-        width: 22
-        height: 11
+        x: 0
+        y: 0
+        width: 512
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 603ac5d396f8ddac0800000000000000
-      internalID: -3828746426031234298
+      spriteID: 31d58d607a183d350800000000000000
+      internalID: 6040314079608331539
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Botao_0: -3828746426031234298
+      Teste numero 23453421_0: 6040314079608331539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

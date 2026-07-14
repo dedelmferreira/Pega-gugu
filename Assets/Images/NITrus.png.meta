@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3df75f835028b694db5664b517864dd7
+guid: b5998be1b08d9764dbdeee0916e7b4cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7279409212304112274
-    second: Relampago Unoqueen_0
+      213: -7547039728651780886
+    second: NITrus_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Relampago Unoqueen_0
+      name: NITrus_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 50
-        height: 25
+        x: 15
+        y: 0
+        width: 34
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6548eda3e75afa90800000000000000
-      internalID: -7279409212304112274
+      spriteID: aec33fb4a57834790800000000000000
+      internalID: -7547039728651780886
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Relampago Unoqueen_0: -7279409212304112274
+      NITrus_0: -7547039728651780886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,22 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Player1 : MonoBehaviour
 {
-    [Header("Movimento para Frente (Eixo X)")]
     public float aceleracao = 10f;       // Taxa de aceleracao
     public float velocidadeMaxima = 15f; // Velocidade limite para a frente
-    public float forcaFreio = 5f;        // Taxa de desaceleracao ao soltar o D
-
-    [Header("Movimento Vertical (Eixo Y)")]
     public float velocidadeVertical = 8f; // Velocidade para subir e descer
 
     public GameObject player2; // Referência ao Player2
 
-    private Rigidbody2D rb;
-    private float velocidadeAtualX = 0f;
+    private Rigidbody2D rb; // Referência ao Rigidbody2D do Player1
+    private float velocidadeAtualX = 0f; // Velocidade atual no eixo X
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // Obtém a referência ao Rigidbody2D do Player1
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Impede a rotação do Rigidbody2D
     }
@@ -34,7 +30,7 @@ public class Player1 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (SETA PRA CIMA E BAIXO)
+        // 2Logica de subir e descer (SETA PRA CIMA E BAIXO)
         float inputVertical = 0f;
 
         if (Input.GetKey(KeyCode.UpArrow))
@@ -48,31 +44,46 @@ public class Player1 : MonoBehaviour
 
         float velocidadeAtualY = inputVertical * velocidadeVertical;
 
-        // 3. APLICACAO DO MOVIMENTO NO RIGIDBODY2D
+        // Aplicacao do movimento no Rigidbody2D
         // O carro vai para a frente (X) e se move para cima/baixo (Y) ao mesmo tempo
         rb.linearVelocity = new Vector2(velocidadeAtualX, velocidadeAtualY);
     }
 
-        //Destruindo ao colidir com o Player2
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player2"))
         {
             Destroy(gameObject); // Destrói o Player1
-            ChangeScene("GameOver"); // Chama a função para mudar de cena)
+            ChangeScene("GameOver"); // Chama a função para mudar de cena
         }
         if (collision.gameObject.CompareTag("Lixo"))
         {
             velocidadeAtualX = 0f; // Reduz a velocidade para 0
+            Destroy(collision.gameObject); // Destroi o objeto lixo
         }
         if (collision.gameObject.CompareTag("Finish"))
         {
-            ChangeScene("Win"); // Chama a função para mudar de cena)
+            ChangeScene("Win"); // Chama a função para mudar de cena
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("NitroAzul"))
+        {
+            velocidadeAtualX -= 10f; // Diminui a velocidade para frente
+            Destroy(collision.gameObject); // Destroi o objeto Nitro
+        }
+        if (collision.gameObject.CompareTag("NitroVermelho"))
+        {
+            velocidadeAtualX += 10f; // Aumenta a velocidade para frente
+            Destroy(collision.gameObject); // Destroi o objeto Nitro
+        }
+    }
+
+    // Função para mudar de cena
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName); // Chama a função para mudar de cena
     }
 }

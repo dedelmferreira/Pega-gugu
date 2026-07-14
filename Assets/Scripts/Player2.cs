@@ -4,12 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Player2 : MonoBehaviour
 {
-    [Header("Movimento para Frente (Eixo X)")]
     public float aceleracao = 10f;       // Taxa de aceleracao
     public float velocidadeMaxima = 15f; // Velocidade limite para a frente
-    public float forcaFreio = 5f;        // Taxa de desaceleracao ao soltar o D
-
-    [Header("Movimento Vertical (Eixo Y)")]
     public float velocidadeVertical = 8f; // Velocidade para subir e descer
 
     public GameObject player1; // Referência ao Player1
@@ -33,7 +29,7 @@ public class Player2 : MonoBehaviour
         velocidadeAtualX = Mathf.Clamp(velocidadeAtualX, 0f, velocidadeMaxima);
 
 
-        // 2. LOGICA DE SUBIR E DESCER (W/S)
+        // Logica de subir e descer (W/S)
         float inputVertical = 0f;
 
         if (Input.GetKey(KeyCode.W))
@@ -47,12 +43,11 @@ public class Player2 : MonoBehaviour
 
         float velocidadeAtualY = inputVertical * velocidadeVertical;
 
-        // 3. APLICACAO DO MOVIMENTO NO RIGIDBODY2D
+        // Aplicacao do movimento no Rigidbody2D
         // O carro vai para a frente (X) e se move para cima/baixo (Y) ao mesmo tempo
         rb.linearVelocity = new Vector2(velocidadeAtualX, velocidadeAtualY);
     }
 
-    //Destruindo ao colidir com o Player2
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player1"))
@@ -62,15 +57,31 @@ public class Player2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Lixo"))
         {
             velocidadeAtualX = 0f; // Reduz a velocidade para 0
+            Destroy(collision.gameObject); // Destrói o objeto lixo
         }
         if (collision.gameObject.CompareTag("Finish"))
         {
-            ChangeScene("Win"); // Chama a função para mudar de cena)
+            ChangeScene("Win"); // Chama a função para mudar de cena
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("NitroAzul"))
+        {
+            velocidadeAtualX += 10f; // Aumenta a velocidade para frente
+            Destroy(collision.gameObject); // Destroi o objeto Nitro
+        }
+        if (collision.gameObject.CompareTag("NitroVermelho"))
+        {
+            velocidadeAtualX -= 10f; // Diminui a velocidade para frente
+            Destroy(collision.gameObject); // Destroi o objeto Nitro
+        }
+    }
+
+    // Função para mudar de cena
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName); // Chama a função para mudar de cena
     }
 }
