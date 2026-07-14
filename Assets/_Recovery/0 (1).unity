@@ -269,9 +269,8 @@ GameObject:
   - component: {fileID: 69161914}
   - component: {fileID: 69161913}
   - component: {fileID: 69161912}
-  - component: {fileID: 69161916}
   m_Layer: 0
-  m_Name: Lixo (2)
+  m_Name: Lixo (4)
   m_TagString: Lixo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,18 +408,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &69161916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69161911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1 &256657953
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +493,8 @@ Transform:
   m_GameObject: {fileID: 256657953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 353.7068, y: -1.8025, z: 0}
-  m_LocalScale: {x: 163.15077, y: 28.999222, z: 0.50502986}
+  m_LocalPosition: {x: 165.1728, y: -1.8025, z: 0}
+  m_LocalScale: {x: 89.50067, y: 28.999222, z: 0.50502986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -524,7 +511,6 @@ GameObject:
   - component: {fileID: 271263238}
   - component: {fileID: 271263237}
   - component: {fileID: 271263236}
-  - component: {fileID: 271263240}
   m_Layer: 0
   m_Name: Lixo (1)
   m_TagString: Lixo
@@ -664,18 +650,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &271263240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271263235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1 &442215010
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,8 +952,8 @@ Transform:
   m_GameObject: {fileID: 499447640}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 640.7, y: -1.5, z: 0}
-  m_LocalScale: {x: 10, y: 45.602406, z: 1}
+  m_LocalPosition: {x: 329.3, y: -2.7, z: 0}
+  m_LocalScale: {x: 10, y: 45.89614, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1502,7 +1476,6 @@ GameObject:
   - component: {fileID: 922586407}
   - component: {fileID: 922586406}
   - component: {fileID: 922586409}
-  - component: {fileID: 922586410}
   m_Layer: 0
   m_Name: Lixo
   m_TagString: Lixo
@@ -1642,18 +1615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ab302dfe1ea044486fe1db0ac40b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LIXO
---- !u!114 &922586410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922586405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1 &1248069405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,9 +2539,8 @@ GameObject:
   - component: {fileID: 2040825494}
   - component: {fileID: 2040825493}
   - component: {fileID: 2040825492}
-  - component: {fileID: 2040825496}
   m_Layer: 0
-  m_Name: Cone (1)
+  m_Name: Lixo (3)
   m_TagString: Lixo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2636,7 +2596,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.61}
+    oldSize: {x: 0.41, y: 0.55}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2693,7 +2653,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 37706280042552451, guid: 483de569db0a8bb4d86f026cbddeca3a, type: 3}
+  m_Sprite: {fileID: -9128243490393864051, guid: 80ae588d697ee9b458241ddae676c631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2718,18 +2678,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2040825496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040825491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1 &2053603200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,9 +2690,8 @@ GameObject:
   - component: {fileID: 2053603203}
   - component: {fileID: 2053603202}
   - component: {fileID: 2053603201}
-  - component: {fileID: 2053603205}
   m_Layer: 0
-  m_Name: Cone
+  m_Name: Lixo (2)
   m_TagString: Lixo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2800,7 +2747,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.61}
+    oldSize: {x: 0.41, y: 0.55}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2857,7 +2804,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 37706280042552451, guid: 483de569db0a8bb4d86f026cbddeca3a, type: 3}
+  m_Sprite: {fileID: -9128243490393864051, guid: 80ae588d697ee9b458241ddae676c631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2882,18 +2829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2053603205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053603200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2903,9 +2838,9 @@ SceneRoots:
   - {fileID: 256657955}
   - {fileID: 922586408}
   - {fileID: 271263239}
-  - {fileID: 69161915}
   - {fileID: 2053603204}
   - {fileID: 2040825495}
+  - {fileID: 69161915}
   - {fileID: 1856168006}
   - {fileID: 1248069408}
   - {fileID: 62202641}
