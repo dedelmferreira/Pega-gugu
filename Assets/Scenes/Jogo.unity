@@ -525,7 +525,6 @@ GameObject:
   - component: {fileID: 271263237}
   - component: {fileID: 271263236}
   - component: {fileID: 271263240}
-  - component: {fileID: 271263241}
   m_Layer: 0
   m_Name: Lixo (1)
   m_TagString: Lixo
@@ -542,7 +541,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 271263235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ab302dfe1ea044486fe1db0ac40b07, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LIXO
 --- !u!61 &271263237
@@ -665,19 +664,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &271263240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271263235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Audio
---- !u!82 &271263241
+--- !u!82 &271263240
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -785,7 +772,7 @@ GameObject:
   - component: {fileID: 442215011}
   - component: {fileID: 442215014}
   - component: {fileID: 442215013}
-  - component: {fileID: 442215012}
+  - component: {fileID: 442215015}
   m_Layer: 0
   m_Name: Camera2
   m_TagString: MainCamera
@@ -808,14 +795,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 792481003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &442215012
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442215010}
-  m_Enabled: 1
 --- !u!114 &442215013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +890,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &442215015
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442215010}
+  m_Enabled: 1
 --- !u!1 &477514612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1341,8 @@ Transform:
   m_LocalPosition: {x: 9.8, y: -46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1577711872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542880692
@@ -2292,6 +2280,50 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1577711871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577711872}
+  - component: {fileID: 1577711873}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577711872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577711871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528099591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577711873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577711871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4e795d7e2a2ad43a44bb7b594853cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio
 --- !u!1 &1601575019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2817,6 @@ GameObject:
   - component: {fileID: 1854367620}
   - component: {fileID: 1854367622}
   - component: {fileID: 1854367621}
-  - component: {fileID: 1854367624}
   - component: {fileID: 1854367625}
   m_Layer: 0
   m_Name: Camera1
@@ -2904,14 +2935,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1854367624
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854367619}
-  m_Enabled: 1
 --- !u!82 &1854367625
 AudioSource:
   m_ObjectHideFlags: 0
