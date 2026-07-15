@@ -4,21 +4,33 @@ public class Audio : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Debug.Log("AudioSource encontrado? " + (audioSource != null));
+        Debug.Log("AudioClip existe? " + (audioSource != null && audioSource.clip != null));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player2"))
+        Debug.Log("COLIDIU COM: " + collision.gameObject.name + " | Tag: " + collision.gameObject.tag);
+
+        if (audioSource == null)
         {
-            audioSource.Play(); // Play the audio when colliding with Player2
+            Debug.Log("ERRO: AudioSource é NULL!");
+            return;
         }
-        if (collision.gameObject.CompareTag("Player1"))
+
+        if (audioSource.clip == null)
         {
-            audioSource.Play(); // Play the audio when colliding with Player1
+            Debug.Log("ERRO: AudioClip é NULL!");
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Tocando som!");
+            audioSource.PlayOneShot(audioSource.clip);
         }
     }
 }
