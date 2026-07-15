@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 32db2e7b4ad764e48a24c4f94879802e
+guid: 79709f9d7a47d774d995f90e9d4b5dd4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1522373734044154840
-    second: Teste 123456789_0
+      213: -4100770128411120966
+    second: Reza pra dar certo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Teste 123456789_0
+      name: Reza pra dar certo_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 163
+        width: 200
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8db361168de802510800000000000000
-      internalID: 1522373734044154840
+      spriteID: abaa5868b432717c0800000000000000
+      internalID: -4100770128411120966
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Teste 123456789_0: 1522373734044154840
+      Reza pra dar certo_0: -4100770128411120966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
